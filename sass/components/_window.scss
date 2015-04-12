@@ -1,0 +1,40 @@
+// Window
+@include Component( 'Window' )
+{
+    width: 700px;
+
+    @include modules( 'center' );
+
+    @include Element( 'bar' )
+    {
+        background: #f1f1f1;
+        height: 32px;
+        padding: ( ( 32px - 14px ) / 2 );
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    @include Element( 'button' )
+    {
+        float: left;
+        height: 14px;
+        width: 14px;
+        margin-right: 6px;
+        border-radius: 50%;
+
+        @include Modifier( 'close' )
+        {
+            background: #ff6157;
+        }
+
+        @include Modifier( 'minimize' )
+        {
+            background: #ffc12e;
+        }
+
+        @include Modifier( 'maximize' )
+        {
+            background: #28ca40;
+        }
+    }
+}

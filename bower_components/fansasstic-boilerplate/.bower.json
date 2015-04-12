@@ -1,0 +1,14 @@
+{
+  "name": "fansasstic-boilerplate",
+  "homepage": "https://github.com/flugger/fansasstic-boilerplate",
+  "_release": "730c2fc66c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "730c2fc66c69cc0430c7d5f7848c5f404c2a491f"
+  },
+  "_source": "git://github.com/flugger/fansasstic-boilerplate.git",
+  "_target": "*",
+  "_originalSource": "fansasstic-boilerplate",
+  "_direct": true
+}

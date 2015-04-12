@@ -1,0 +1,67 @@
+// Finder
+@include Component( 'Finder' )
+{
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    font-size: 14px;
+    cursor: default;
+    user-select: none;
+
+    @include Element( 'group' )
+    {
+        transition: height 0.5s;
+
+        @include Element( 'item' )
+        {
+            padding-left: 64px;
+        }
+
+        @include Modifier( 'open' )
+        {
+            height: 0;
+        }
+    }
+
+    @include Element( 'item' )
+    {
+        line-height: 32px;
+        padding-left: 32px;
+        position: relative;
+
+        &:nth-child( odd )
+        {
+            background-color: #fafafa;
+        }
+
+        @include Modifier( 'depth' )
+        {
+            padding-left: 64px;
+        }
+
+        @include Modifier( 'folder' )
+        {
+            font-weight: 400;
+            cursor: pointer;
+
+            &:before {
+                position: absolute;
+                left: 10px;
+                content: '►';
+                font-size: 10px;
+                color: #aaa;
+            }
+
+            @include Modifier( 'open' )
+            {
+                &:before {
+                    content: '▼';
+                }
+            }
+        }
+
+        @include Modifier( 'file' )
+        {
+
+        }
+    }
+}

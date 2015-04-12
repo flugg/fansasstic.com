@@ -1,0 +1,7 @@
+// Container
+@include Component( 'Container' )
+{
+    max-width: 960px;
+
+    @include module( 'center' );
+}

@@ -1,0 +1,180 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+body,
+h1 {
+  margin: 0; }
+
+body {
+  font-family: 'Open Sans';
+  font-weight: 200; }
+
+a {
+  color: #c6538c;
+  font-weight: 400;
+  text-decoration: none; }
+  a:hover {
+    border-bottom: 1px dotted #c6538c; }
+
+h3 {
+  font-size: 24px;
+  font-weight: 600; }
+
+h4 {
+  font-size: 18px;
+  font-weight: 600; }
+
+p {
+  line-height: 1.6;
+  margin: 20px 0; }
+
+strong {
+  font-weight: 600; }
+
+::-moz-selection {
+  color: white;
+  background: rgba(255, 113, 182, 0.8); }
+
+::selection {
+  color: white;
+  background: rgba(255, 113, 182, 0.8); }
+
+hr {
+  border: none;
+  border-top: 1px dashed #e2e2e2;
+  margin: 30px 0; }
+
+pre {
+  border-left: 2px solid #c6538c;
+  background: #f1f1f1;
+  padding: 20px;
+  font-family: 'Source Code Pro';
+  font-size: 14px; }
+
+.Container, .Logo, .Window {
+  margin-right: auto;
+  margin-left: auto; }
+
+.Banner {
+  position: relative;
+  height: 360px;
+  background: url("../images/bg.png") 50% 0; }
+  .Banner-showcase {
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
+
+.Console {
+  background: #333;
+  padding: 20px;
+  font-family: 'Source Code Pro';
+  color: white; }
+  .Console-command {
+    margin-bottom: 10px; }
+    .Console-command:last-child {
+      margin-bottom: 0; }
+    .Console-command:before {
+      content: '$';
+      padding-right: 10px;
+      color: #ff71B6; }
+
+.Container {
+  max-width: 960px; }
+
+.Logo {
+  position: relative;
+  width: 390px;
+  top: 140px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.Navigation {
+  height: 80px;
+  background: #f1f1f1; }
+  .Navigation-list {
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+  .Navigation-item {
+    display: inline-block; }
+    .Navigation-item:nth-child(n + 2):before {
+      content: '•';
+      padding: 0 16px;
+      color: #c6538c; }
+  .Navigation-link {
+    color: #333;
+    font-size: 14px;
+    line-height: 80px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.1s; }
+    .Navigation-link:hover {
+      color: #c6538c;
+      border-bottom: none; }
+
+.StickyBar {
+  border-bottom: 1px dashed #e2e2e2; }
+  .StickyBar-header {
+    height: 80px; }
+  .StickyBar-heading {
+    margin: 0;
+    line-height: 80px;
+    font-weight: 200;
+    font-size: 24px; }
+
+.Window {
+  width: 700px; }
+  .Window-bar {
+    background: #f1f1f1;
+    height: 32px;
+    padding: 9px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px; }
+  .Window-button {
+    float: left;
+    height: 14px;
+    width: 14px;
+    margin-right: 6px;
+    border-radius: 50%; }
+    .Window-button--close {
+      background: #ff6157; }
+    .Window-button--minimize {
+      background: #ffc12e; }
+    .Window-button--maximize {
+      background: #28ca40; }
+
+.Finder {
+  border: 1px solid #e2e2e2;
+  border-top: none;
+  font-size: 14px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .Finder-group {
+    transition: height 0.5s; }
+    .Finder-group .Finder-item {
+      padding-left: 64px; }
+    .Finder-group--open {
+      height: 0; }
+  .Finder-item {
+    line-height: 32px;
+    padding-left: 32px;
+    position: relative; }
+    .Finder-item:nth-child(odd) {
+      background-color: #fafafa; }
+    .Finder-item--depth {
+      padding-left: 64px; }
+    .Finder-item--folder {
+      font-weight: 400;
+      cursor: pointer; }
+      .Finder-item--folder:before {
+        position: absolute;
+        left: 10px;
+        content: '►';
+        font-size: 10px;
+        color: #aaa; }
+      .Finder-item--open:before {
+        content: '▼'; }

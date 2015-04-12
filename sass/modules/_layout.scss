@@ -1,0 +1,38 @@
+@include new-module( 'center' )
+{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@include new-module( 'center' )
+{
+
+}
+
+@include new-module( 'center-vertical' )
+{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY( -50% );
+}
+
+@include new-module( 'hide' )
+{
+    display: none;
+}
+
+@include new-module( 'clear-fix' )
+{
+    &:before,
+    &:after
+    {
+        content: '';
+        display: table;
+    }
+
+    &:after
+    {
+        clear: both;
+    }
+}

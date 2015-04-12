@@ -1,0 +1,41 @@
+<h3 id="explore">Explore</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloremque doloribus enim est iusto molestiae obcaecati quibusdam ullam. A adipisci dolores est facilis libero obcaecati porro repellendus repudiandae, sequi voluptatem.</p>
+<h4 id="components">Components</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloremque doloribus enim est iusto molestiae obcaecati quibusdam ullam. A adipisci dolores est facilis libero obcaecati porro repellendus repudiandae, sequi voluptatem.</p>
+<pre><code class="lang-scss"><span class="hljs-comment">// Bar</span>
+<span class="hljs-variable">@include</span> <span class="hljs-function">Component</span>( <span class="hljs-string">'Bar'</span> )
+{
+    <span class="hljs-attribute">background</span>: blue;
+}
+</code></pre>
+<p>You can read more about components in the documentation.</p>
+<h4 id="modifiers">Modifiers</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloremque doloribus enim est iusto molestiae obcaecati quibusdam ullam. A adipisci dolores est facilis libero obcaecati porro repellendus repudiandae, sequi voluptatem.</p>
+<pre><code class="lang-scss"><span class="hljs-comment">// Bar</span>
+<span class="hljs-variable">@include</span> <span class="hljs-function">Component</span>( <span class="hljs-string">'Bar'</span> )
+{
+    <span class="hljs-attribute">background</span>: blue;
+
+    <span class="hljs-comment">// Bar--alert</span>
+    <span class="hljs-variable">@include</span> <span class="hljs-function">Modifier</span>( <span class="hljs-string">'alert'</span> )
+    {
+        <span class="hljs-attribute">background</span>: red;
+    }
+}
+</code></pre>
+<p>You can read more about modifiers in the documentation.</p>
+<h4 id="elements">Elements</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloremque doloribus enim est iusto molestiae obcaecati quibusdam ullam. A adipisci dolores est facilis libero obcaecati porro repellendus repudiandae, sequi voluptatem.</p>
+<pre><code class="lang-scss"><span class="hljs-comment">// Bar</span>
+<span class="hljs-variable">@include</span> <span class="hljs-function">Component</span>( <span class="hljs-string">'Bar'</span> )
+{
+    <span class="hljs-attribute">background</span>: blue;
+
+    <span class="hljs-comment">// Bar-icon</span>
+    <span class="hljs-variable">@include</span> <span class="hljs-function">Element</span>( <span class="hljs-string">'icon'</span> )
+    {
+        <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">20px</span>;
+    }
+}
+</code></pre>
+<p>You can read more about elements in the documentation.</p>

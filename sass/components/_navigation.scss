@@ -1,0 +1,40 @@
+// Navigation
+@include Component( 'Navigation' )
+{
+    height: 80px;
+    background: #f1f1f1;
+
+    @include Element( 'list' )
+    {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    @include Element( 'item' )
+    {
+        display: inline-block;
+
+        &:nth-child( n + 2 ):before {
+            content: '•';
+            padding: 0 16px;
+            color: #c6538c;
+        }
+    }
+
+    @include Element( 'link' )
+    {
+        color: #333;
+        font-size: 14px;
+        line-height: 80px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: color 0.1s;
+
+        &:hover
+        {
+            color: #c6538c;
+            border-bottom: none;
+        }
+    }
+}

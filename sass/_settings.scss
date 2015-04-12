@@ -1,0 +1,28 @@
+// ---------------------------------------------------------------------
+// Framework Settings
+// ---------------------------------------------------------------------
+// In this file you can specify how Fansasstic should be configured, and
+// how the it should work under the hood. The $fansasstic map below will
+// be merged with a default configuration map shipped with the framework
+// where values in the map below will take precedence over default ones.
+
+$fansasstic: (
+
+    'breakpoints': (
+
+        //
+        'breakpoints-map': breakpoints,
+
+        // Set what unit you would like to output your breakpoints as, in
+        // your CSS. You can still use px when you set your breakpoints
+        // in the configuration - it will automatically be converted.
+        // Valid values: px, em
+        'breakpoints-unit': em,
+
+        // Specify wether or not you build your project going from a mobile
+        // first perspective or not. Fansasstic checks this value to know
+        // wether to use min-width or max-width as default media query.
+        'mobile-first': true,
+
+    )
+);

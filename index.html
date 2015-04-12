@@ -1,0 +1,93 @@
+<!doctype html>
+<html class = 'no-js' lang = 'en' ng-app = 'fansasstic'>
+    <head>
+        <meta charset = 'utf-8'>
+        <meta http-equiv = 'x-ua-compatible' content = 'ie=edge'>
+        <title></title>
+        <meta name = 'description' content = ''>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+
+        <link rel = 'apple-touch-icon' href = 'apple-touch-icon.png'>
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel = 'stylesheet' href = 'assets/css/main.css'>
+        <link rel = 'stylesheet' href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css'>
+        <link rel = 'stylesheet' href = 'http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500'>
+    </head>
+    <body ng-controller = 'MainController'>
+        <!--[if lt IE 8]>
+        <p class = 'browserupgrade'>You are using an <strong>outdated</strong> browser. Please
+            <a href = 'http://browsehappy.com/'>upgrade your browser</a> to improve your experience.
+        </p>
+        <![endif]-->
+
+        <header class = 'Banner'>
+
+            <h1 class = 'Logo'>
+                <a href = '' ng-click = 'goHome()'>
+                    <img src = 'assets/images/logo.png' alt = 'Fansasstic' />
+                </a>
+            </h1>
+
+            <div class = 'Banner-showcase'>
+
+                <div class = 'Window'>
+
+                    <header class = 'Window-bar'>
+                        <div class = 'Window-button Window-button--close'></div>
+                        <div class = 'Window-button Window-button--minimize'></div>
+                        <div class = 'Window-button Window-button--maximize'></div>
+                    </header>
+
+                    <div class = 'Console'>
+                        <div class = 'Console-command'>npm install -g fansasstic</div>
+                        <div class = 'Console-command'>fansasstic new</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <header class = 'StickyBar'>
+
+                <nav class = 'Navigation'>
+                    <ul class = 'Navigation-list'>
+                        <li class = 'Navigation-item'>
+                            <a href = '#' class = 'Navigation-link' ng-click = 'goToDocs()'>Documentation</a>
+                        </li>
+                        <li class = 'Navigation-item'>
+                            <a href = '#' class = 'Navigation-link'>API</a>
+                        </li>
+                        <li class = 'Navigation-item'>
+                            <a href = '#' class = 'Navigation-link'>Github</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class = 'StickyBar-header'>
+                    <div class = 'Container'>
+                        <h2 class = 'StickyBar-heading'>{{ title }}</h2>
+                    </div>
+                </div>
+
+            </header>
+
+            <div class = 'Container'>
+                <ng-include src = 'currentPage'></ng-include>
+            </div>
+
+        </main>
+
+        <script src = 'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js'></script>
+        <script src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+        <script>window.jQuery || document.write( "<script src='js/vendor/jquery-1.11.2.min.js'><\/script>" )</script>
+        <script src = 'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js'></script>
+        <script src = 'http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js'></script>
+        <script src = 'bower_components/ng-slide-down/dist/ng-slide-down.min.js'></script>
+        <script src = 'app/app.js'></script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<h3 id="configure">Configure</h3>
+<p>Fansasstic is very configurable and brings a default configuration file. However, you&#39;re completely free to override it, or parts of it, by creating a <em>$fansasstic</em> map.
+The boilerplate provides a <strong>_settings.scss</strong> which has a <em>$fansasstic</em> map filled with all the default values.</p>
+<p>You can head to the <a href="http://fansasstic.com/docs/configuration">documentation</a> for a full overview of the configuration possibilities.</p>
+<h4 id="variables">Variables</h4>
+<p>The boilerplate gives you a <strong>variables</strong> folder with a few example files to get you started. You are free to remove these or store your variables somewhere else.</p>
+<p>Instead of creating regular Sass variables, Fansasstic encourages the use of maps to give one variable multiple values. This has several benefits, but let&#39;s first take a look at <strong>_breakpoints.scss</strong>:</p>
+<pre><code class="lang-scss">$<span class="hljs-rule"><span class="hljs-attribute">breakpoints</span>:<span class="hljs-value"> (
+    small: <span class="hljs-number">400px</span>,
+    medium: <span class="hljs-number">700px</span>,
+    big: <span class="hljs-number">1000px</span>
+)</span></span>;
+</code></pre>
+<p>The <em>$breakpoints</em> map is where you should store your major breakpoints; you give the given breakpoint a key and a value. </p>
+<p>By using the keys you assigned in the <em>$breakpoints</em> map you can now create variables that magically represents different values at different breakpoints. Take a look at <strong>_layout.scss</strong>:</p>
+<pre><code class="lang-scss">$<span class="hljs-rule"><span class="hljs-attribute">layout</span>:<span class="hljs-value"> (
+    <span class="hljs-string">'spacing'</span>: (
+        default: <span class="hljs-number">10px</span>,
+        small: <span class="hljs-number">15px</span>,
+        big: <span class="hljs-number">20px</span>
+    )
+)</span></span>;
+</code></pre>
+<p>Here we assign the <em>spacing</em> key in <em>$layout</em> to be 10px by default, 15px at 400px screen width and 20px at 1000px screen width. To see how you can use this magic you should read up on modules below.</p>
+<p>If we, however, only want to retrieve a value given at a given breakpoint we can do so using <em>get</em>:</p>
+<pre><code class="lang-scss"><span class="hljs-variable">$value</span><span class="hljs-value">: <span class="hljs-function">get</span>( <span class="hljs-variable">$layout</span>, <span class="hljs-string">'spacing.small'</span> );</span> <span class="hljs-comment">// Returns 15px</span>
+</code></pre>
+<p>The <em>get</em> function is part of Fansasstic&#39;s huge library, filled with helpful functions to simplify working with data types in Sass; like strings, lists and maps. 
+Head over to the documentation for more information about <a href="http://fansasstic.com/docs/variables">variables</a> or <a href="http://fansasstic.com/docs/library">the library</a>.</p>
+<h4 id="modules">Modules</h4>
+<p>The boilerplate includes an empty <strong>modules</strong> folder. Modules are in many ways the building blocks of your application, they are basically mixins on steroids. You can use modules to bind your variables maps to to the given breakpoint keys.</p>
+<p>If we use the default variables as described above we can create the following module:</p>
+<pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">include</span> <span class="hljs-function">new-module</span>( <span class="hljs-string">"inner-spacing"</span>, (
+    property: padding
+    value: <span class="hljs-function">get</span>( $layout, <span class="hljs-string">'spacing'</span> )</span>;
+) );
+</code></pre>
+<p>This will create a new module called <em>inner-spacing</em>, we can take use of our new module like this:</p>
+<pre><code class="lang-scss"><span class="hljs-tag">header</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">module</span>( <span class="hljs-string">'inner-spacing'</span> );
+}
+</code></pre>
+<p>Which compiles down to the following CSS output:</p>
+<pre><code class="lang-css"><span class="hljs-tag">header</span> { <span class="hljs-tag">margin</span>: <span class="hljs-tag">10px</span> }
+@<span class="hljs-tag">media</span> <span class="hljs-tag">screen</span> <span class="hljs-tag">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">400px</span>) {
+    <span class="hljs-tag">header</span> { <span class="hljs-tag">margin</span>: <span class="hljs-tag">15px</span> } }
+@<span class="hljs-tag">media</span> <span class="hljs-tag">screen</span> <span class="hljs-tag">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">1000px</span>) {
+    <span class="hljs-tag">header</span> { <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> } }
+</code></pre>
+<p>You can read more about <a href="http://fansasstic.com/docs/modules">modules</a> in the documentation.</p>

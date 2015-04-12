@@ -1,0 +1,37 @@
+<div ng-include = "'partials/getting-started/introduction.html'"></div>
+<hr />
+<div ng-include = "'partials/getting-started/install.html'"></div>
+<div class = 'Window'>
+
+    <header class = 'Window-bar'>
+        <div class = 'Window-button Window-button--close'></div>
+        <div class = 'Window-button Window-button--minimize'></div>
+        <div class = 'Window-button Window-button--maximize'></div>
+    </header>
+
+    <div class="Finder">
+        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderBase}" ng-click = 'toggleBase()'>base</div>
+        <div class="Finder-group" ng-slide-down = "folderBase" duration = '0.2'>
+            <div class = 'js-odd-filler'></div>
+            <div class = 'Finder-item Finder-item--file'>layout.scss</div>
+            <div class = 'Finder-item Finder-item--file'>typography.scss</div>
+        </div>
+        <div class = 'js-odd-filler'></div>
+        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderComponents}" ng-click = 'toggleComponents()'>components</div>
+        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderModules}" ng-click = 'toggleModules()'>modules</div>
+        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderVariables}" ng-click = 'toggleVariables()'>variables</div>
+        <div class = 'Finder-group' ng-slide-down = "folderVariables" duration = '0.2'>
+            <div class = 'Finder-item Finder-item--file'>breakpoints.scss</div>
+            <div class = 'Finder-item Finder-item--file'>colors.scss</div>
+            <div class = 'Finder-item Finder-item--file'>layout.scss</div>
+            <div class = 'Finder-item Finder-item--file'>typography.scss</div>
+        </div>
+        <div class = 'js-odd-filler'></div>
+        <div class = 'Finder-item Finder-item--file'>_settings.scss</div>
+        <div class = 'Finder-item Finder-item--file'>manifest.scss</div>
+    </div>
+</div>
+<hr />
+<div ng-include = "'partials/getting-started/configure.html'"></div>
+<hr />
+<div ng-include = "'partials/getting-started/explore.html'"></div>
