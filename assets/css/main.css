@@ -88,6 +88,11 @@ pre {
   top: 140px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
+  .Logo--footer {
+    top: 65px;
+    width: 30px;
+    -webkit-transform: none;
+    transform: none; }
 
 .Navigation {
   height: 80px;
@@ -178,3 +183,8 @@ pre {
         color: #aaa; }
       .Finder-item--open:before {
         content: '▼'; }
+
+.Footer {
+  height: 180px;
+  background: url("../images/footer-bg.png") 50% 0;
+  margin-top: 50px; }

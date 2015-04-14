@@ -7,4 +7,11 @@
     transform: translateY( -50% );
 
     @include modules( 'center' );
+
+    @include Modifier( 'footer' )
+    {
+        top: ( ( 180px - 50px ) / 2 );
+        width: 30px;
+        transform: none;
+    }
 }

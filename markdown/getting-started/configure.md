@@ -46,7 +46,7 @@ Head over to the documentation for more information about [variables](http://fan
 
 #### Modules
 
-The boilerplate includes an empty __modules__ folder. Modules are in many ways the building blocks of your application, they are basically mixins on steroids. You can use modules to bind your variables maps to to the given breakpoint keys.
+Modules are in many ways the building blocks of your application, they are basically mixins on steroids. You can use modules to bind your variables maps to to the given breakpoint keys. The boilerplate includes an empty __modules__ folder.
 
 If we use the default variables as described above we can create the following module:
 

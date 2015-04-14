@@ -18,7 +18,18 @@
         </div>
         <div class = 'js-odd-filler'></div>
         <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderComponents}" ng-click = 'toggleComponents()'>components</div>
+        <div class = 'Finder-group' ng-slide-down = "folderComponents" duration = '0.2'>
+            <div class = 'Finder-item Finder-item--file'>_button.scss</div>
+            <div class = 'Finder-item Finder-item--file'>_container.scss</div>
+        </div>
+        <div class = 'js-odd-filler'></div>
         <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderModules}" ng-click = 'toggleModules()'>modules</div>
+        <div class = 'Finder-group' ng-slide-down = "folderModules" duration = '0.2'>
+            <div class = 'js-odd-filler'></div>
+            <div class = 'Finder-item Finder-item--file'>_clear-fix.scss</div>
+            <div class = 'Finder-item Finder-item--file'>_center.scss</div>
+        </div>
+        <div class = 'js-odd-filler'></div>
         <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderVariables}" ng-click = 'toggleVariables()'>variables</div>
         <div class = 'Finder-group' ng-slide-down = "folderVariables" duration = '0.2'>
             <div class = 'Finder-item Finder-item--file'>breakpoints.scss</div>

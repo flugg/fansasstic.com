@@ -1,0 +1,7 @@
+// Footer
+@include Component( 'Footer' )
+{
+    height: 180px;
+    background: url( '../images/footer-bg.png' ) 50% 0;
+    margin-top: 50px;
+}

@@ -3,8 +3,8 @@ var app = angular.module( 'fansasstic', [ 'hljs', 'ng-slide-down' ] );
 app.controller( 'MainController', [ '$scope', function ( $scope ) {
 
     $scope.folderBase = true;
-    $scope.folderComponents = true;
-    $scope.folderModules = true;
+    $scope.folderComponents = false;
+    $scope.folderModules = false;
     $scope.folderVariables = true;
 
     $scope.goHome = function() {

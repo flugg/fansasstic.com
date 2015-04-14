@@ -3,7 +3,7 @@
 Fansasstic comes with its own CLI (Command Line Interface) through Node.js that makes installing and setting up new projects a delight. To install it, run the following command in the terminal:
 
 ```
-npm install -g fansasstic
+npm install -g fansasstic-cli
 ```
 
 Once the CLI is installed you can easily set up a new project using the following command:
