@@ -1,0 +1,27 @@
+// ---------------------------------------------------------------------
+// Terminal
+// ---------------------------------------------------------------------
+// Mimics a terminal window to show console commands. Can be used inside
+// a Window component or by itself.
+
+// .Terminal
+@include component( 'Terminal' )
+{
+    background: get( $color, 'background.terminal' );
+    padding: get( $layout, 'spacing.base' ) get( $layout, 'spacing.base' ) * 1.5;
+    font-family: get( $typography, 'font-family.terminal' );
+    color: get( $color, 'font.light' );
+
+    // .Console-command
+    @include element( 'command' )
+    {
+        line-height: get( $layout, 'height.small' );
+
+        // .Console-command:before
+        &:before {
+            content: '$';
+            padding-right: get( $layout, 'spacing.base' );
+            color: get( $color, 'font.terminal' );
+        }
+    }
+}

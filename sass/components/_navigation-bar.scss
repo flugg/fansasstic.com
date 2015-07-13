@@ -1,0 +1,66 @@
+// ---------------------------------------------------------------------
+// NavigationBar
+// ---------------------------------------------------------------------
+// The sticky bar with the main navigation for the site.
+
+// NavigationBar
+@include component( 'NavigationBar' ) {
+
+    position: absolute;
+    bottom: ( get( $layout, 'height.bar' ) * -1 );
+    width: 100%;
+    height: get( $layout, 'height.bar' );
+    background: get( $color, 'navigation.bar' );
+    transition: height get( $layout, 'transition.medium' );
+    z-index: 1;
+
+    @include stance( 'sticky' ) {
+        height: ( get( $layout, 'height.bar' ) / 1.5 );
+        border-bottom: get( $layout, 'border.navigation' ) get( $color, 'navigation.border' );
+
+        @include element( 'link' )
+        {
+            line-height: ( get( $layout, 'height.bar' ) / 1.5 );
+        }
+    }
+
+    // NavigationBar-list
+    @include element( 'list' ) {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    // NavigationBar-item
+    @include element( 'item' ) {
+        display: inline-block;
+
+        // NavigationBar-item:nth-child( n + 2 ):before
+        &:nth-child( n + 2 ):before {
+            content: '•';
+            padding: 0 get( $layout, 'spacing.base' );
+            color: get( $color, 'navigation.separator' );
+        }
+    }
+
+    // NavigationBar-link
+    @include element( 'link' ) {
+        color: get( $color, 'font.navigation' );
+        font-size: get( $typography, 'font-size.small' );
+        font-weight: get( $typography, 'font-weight.base' );
+        line-height: get( $layout, 'height.bar' );
+        text-transform: uppercase;
+        letter-spacing: get( $typography, 'letter-spacing.navigation' );
+        transition: color get( $layout, 'transition.fast' ), line-height get( $layout, 'transition.medium' );
+
+        // NavigationBar-link:hover
+        &:hover {
+            color: get( $color, 'font.action' );
+            border-bottom: none;
+        }
+
+        @include stance( 'active' ) {
+            font-weight: get( $typography, 'font-weight.heading' );
+        }
+    }
+}

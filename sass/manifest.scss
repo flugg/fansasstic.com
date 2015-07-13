@@ -13,21 +13,27 @@
 @import '../bower_components/fansasstic/src/manifest';
 
 // Import variables
-@import 'variables/breakpoints';
+@import 'variables/breakpoint';
+@import 'variables/color';
+@import 'variables/layout';
+@import 'variables/typography';
 
 // Import base
+@import 'base/resets';
 @import 'base/layout';
+@import 'base/typography';
 
 //Import modules
 @import 'modules/layout';
-
+//
 //Import components
-@import 'components/banner';
-@import 'components/console';
+@import 'components/application';
 @import 'components/container';
-@import 'components/logo';
-@import 'components/navigation';
-@import 'components/sticky-bar';
-@import 'components/window';
-@import 'components/finder';
+@import 'components/file-manager';
 @import 'components/footer';
+@import 'components/header';
+@import 'components/logo';
+@import 'components/navigation-bar';
+@import 'components/terminal';
+@import 'components/title-bar';
+@import 'components/window';

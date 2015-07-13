@@ -19,6 +19,7 @@
     "fansasstic-library": "*",
     "fansasstic": "*",
     "highlightjs": "~8.5.0",
-    "ng-slide-down": "~0.3.0"
+    "ng-slide-down": "~0.3.0",
+    "normalize.css": "~3.0.3"
   }
 }

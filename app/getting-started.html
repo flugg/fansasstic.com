@@ -1,48 +1,78 @@
-<div ng-include = "'partials/getting-started/introduction.html'"></div>
-<hr />
-<div ng-include = "'partials/getting-started/install.html'"></div>
-<div class = 'Window'>
+<!-- Container -->
+<div class = 'Container'>
 
-    <header class = 'Window-bar'>
-        <div class = 'Window-button Window-button--close'></div>
-        <div class = 'Window-button Window-button--minimize'></div>
-        <div class = 'Window-button Window-button--maximize'></div>
-    </header>
+    <article>
 
-    <div class="Finder">
-        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderBase}" ng-click = 'toggleBase()'>base</div>
-        <div class="Finder-group" ng-slide-down = "folderBase" duration = '0.2'>
-            <div class = 'js-odd-filler'></div>
-            <div class = 'Finder-item Finder-item--file'>layout.scss</div>
-            <div class = 'Finder-item Finder-item--file'>typography.scss</div>
+        <!-- Start Introduction -->
+        <div ng-include = "'partials/getting-started/introduction.html'"></div>
+        <!-- End Introduction -->
+
+        <hr />
+
+        <!-- Start Install -->
+        <div ng-include = "'partials/getting-started/install.html'"></div>
+        <!-- End Install -->
+
+        <!-- Window -->
+        <div class = 'Window'>
+
+            <header class = 'Window-bar'>
+                <div class = 'Window-button Window-button--close'></div>
+                <div class = 'Window-button Window-button--minimize'></div>
+                <div class = 'Window-button Window-button--maximize'></div>
+            </header>
+
+            <!-- FileManager -->
+            <div class="FileManager">
+                <div class = 'FileManager-item FileManager-item--folder' ng-class = "{'is-open' : folderBase}" ng-click = 'toggleBase()'>base</div>
+                <div class="FileManager-group" ng-slide-down = "folderBase" duration = '0.2'>
+                    <div class = 'js-odd-filler'></div>
+                    <div class = 'FileManager-item FileManager-item--file'>layout.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>typography.scss</div>
+                </div>
+                <div class = 'js-odd-filler'></div>
+                <div class = 'FileManager-item FileManager-item--folder' ng-class = "{'is-open' : folderComponents}" ng-click = 'toggleComponents()'>components</div>
+                <div class = 'FileManager-group' ng-slide-down = "folderComponents" duration = '0.2'>
+                    <div class = 'FileManager-item FileManager-item--file'>_button.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>_container.scss</div>
+                </div>
+                <div class = 'js-odd-filler'></div>
+                <div class = 'FileManager-item FileManager-item--folder' ng-class = "{'is-open' : folderModules}" ng-click = 'toggleModules()'>modules</div>
+                <div class = 'FileManager-group' ng-slide-down = "folderModules" duration = '0.2'>
+                    <div class = 'js-odd-filler'></div>
+                    <div class = 'FileManager-item FileManager-item--file'>_clear-fix.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>_center.scss</div>
+                </div>
+                <div class = 'js-odd-filler'></div>
+                <div class = 'FileManager-item FileManager-item--folder' ng-class = "{'is-open' : folderVariables}" ng-click = 'toggleVariables()'>variables</div>
+                <div class = 'FileManager-group' ng-slide-down = "folderVariables" duration = '0.2'>
+                    <div class = 'FileManager-item FileManager-item--file'>breakpoints.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>colors.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>layout.scss</div>
+                    <div class = 'FileManager-item FileManager-item--file'>typography.scss</div>
+                </div>
+                <div class = 'js-odd-filler'></div>
+                <div class = 'FileManager-item FileManager-item--file'>_settings.scss</div>
+                <div class = 'FileManager-item FileManager-item--file'>manifest.scss</div>
+            </div>
+            <!-- /FileManager -->
+
         </div>
-        <div class = 'js-odd-filler'></div>
-        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderComponents}" ng-click = 'toggleComponents()'>components</div>
-        <div class = 'Finder-group' ng-slide-down = "folderComponents" duration = '0.2'>
-            <div class = 'Finder-item Finder-item--file'>_button.scss</div>
-            <div class = 'Finder-item Finder-item--file'>_container.scss</div>
-        </div>
-        <div class = 'js-odd-filler'></div>
-        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderModules}" ng-click = 'toggleModules()'>modules</div>
-        <div class = 'Finder-group' ng-slide-down = "folderModules" duration = '0.2'>
-            <div class = 'js-odd-filler'></div>
-            <div class = 'Finder-item Finder-item--file'>_clear-fix.scss</div>
-            <div class = 'Finder-item Finder-item--file'>_center.scss</div>
-        </div>
-        <div class = 'js-odd-filler'></div>
-        <div class = 'Finder-item Finder-item--folder' ng-class = "{'Finder-item--open' : folderVariables}" ng-click = 'toggleVariables()'>variables</div>
-        <div class = 'Finder-group' ng-slide-down = "folderVariables" duration = '0.2'>
-            <div class = 'Finder-item Finder-item--file'>breakpoints.scss</div>
-            <div class = 'Finder-item Finder-item--file'>colors.scss</div>
-            <div class = 'Finder-item Finder-item--file'>layout.scss</div>
-            <div class = 'Finder-item Finder-item--file'>typography.scss</div>
-        </div>
-        <div class = 'js-odd-filler'></div>
-        <div class = 'Finder-item Finder-item--file'>_settings.scss</div>
-        <div class = 'Finder-item Finder-item--file'>manifest.scss</div>
-    </div>
+        <!-- /Window -->
+
+        <hr />
+
+        <!-- Start Configure -->
+        <div ng-include = "'partials/getting-started/configure.html'"></div>
+        <!-- End Configure -->
+
+        <hr />
+
+        <!-- Start Explore -->
+        <div ng-include = "'partials/getting-started/explore.html'"></div>
+        <!-- End Explore -->
+
+    </article>
+
 </div>
-<hr />
-<div ng-include = "'partials/getting-started/configure.html'"></div>
-<hr />
-<div ng-include = "'partials/getting-started/explore.html'"></div>
+<!-- /Container-->

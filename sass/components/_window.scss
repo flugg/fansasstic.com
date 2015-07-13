@@ -1,40 +1,54 @@
+// ---------------------------------------------------------------------
 // Window
-@include Component( 'Window' )
-{
-    width: 700px;
+// ---------------------------------------------------------------------
+// A component mimicking a desktop window in OSX.
 
+// .Window
+@include component( 'Window' )
+{
     @include modules( 'center' );
 
-    @include Element( 'bar' )
+    // .Window--small
+    @include modifier( 'small' )
     {
-        background: #f1f1f1;
-        height: 32px;
-        padding: ( ( 32px - 14px ) / 2 );
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
+        width: get( $layout, 'width.small' );
     }
 
-    @include Element( 'button' )
+    // .Window-bar
+    @include element( 'bar' )
+    {
+        height: get( $layout, 'height.small' );
+        padding: ( ( get( $layout, 'height.small' ) - get( $layout, 'size.small-circle' ) ) / 2 );
+        background: get( $color, 'window.bar' );
+        border-top-left-radius: get( $layout, 'border-radius.base' );
+        border-top-right-radius: get( $layout, 'border-radius.base' );
+    }
+
+    // .Window-button
+    @include element( 'button' )
     {
         float: left;
-        height: 14px;
-        width: 14px;
-        margin-right: 6px;
+        height: get( $layout, 'size.small-circle' );
+        width: get( $layout, 'size.small-circle' );
+        margin-right: ( get( $layout, 'spacing.base' ) / 2 );
         border-radius: 50%;
 
-        @include Modifier( 'close' )
+        // .Window-button--close
+        @include modifier( 'close' )
         {
-            background: #ff6157;
+            background: get( $color, 'window.button-close' );
         }
 
-        @include Modifier( 'minimize' )
+        // .Window-button--minimize
+        @include modifier( 'minimize' )
         {
-            background: #ffc12e;
+            background: get( $color, 'window.button-minimize' );
         }
 
-        @include Modifier( 'maximize' )
+        // .Window-button--maximize
+        @include modifier( 'maximize' )
         {
-            background: #28ca40;
+            background: get( $color, 'window.button-maximize' );
         }
     }
 }

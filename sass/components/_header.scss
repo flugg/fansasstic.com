@@ -1,0 +1,26 @@
+// ---------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------
+// Main header banner at the top of the page. Introduction to the site
+// with logo and quick installation showcase in a terminal window.
+
+// .Header
+@include component( 'Header' )
+{
+    position: relative;
+
+    // .Header-banner
+    @include element( 'banner' )
+    {
+        height: get( $layout, 'height.banner' );
+        background: image( 'bg.png' ) center top;
+    }
+
+    // .Header-showcase
+    @include element( 'showcase' )
+    {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}

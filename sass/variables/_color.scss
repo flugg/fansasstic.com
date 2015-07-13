@@ -1,0 +1,51 @@
+// ---------------------------------------------------------------------
+// Color Variables
+// ---------------------------------------------------------------------
+//
+
+$brand-primary: #c6538c;
+$brand-primary-light: #ff71B6;
+$brand-weak: #aaa;
+$brand-secondary: #e2e2e2;
+$brand-light: #f1f1f1;
+$brand-white: #fff;
+$brand-dark: #333;
+$osx-red: #ff6157;
+$osx-yellow: #ffc12e;
+$osx-green: #28ca40;
+
+$color: (
+
+    background: (
+        'code-block': $brand-light,
+        'terminal': $brand-dark,
+        'selection': $brand-primary-light
+    ),
+
+    border: (
+        'separator': $brand-secondary,
+        'code-block': $brand-primary,
+        'action-dark': $brand-primary-light,
+    ),
+
+    font: (
+        'action': $brand-primary,
+        'light': $brand-light,
+        'terminal': $brand-primary-light,
+        'navigation': $brand-dark,
+        'weak': $brand-weak
+    ),
+
+    navigation: (
+        'bar': $brand-light,
+        'separator': $brand-primary,
+        'border': $brand-white
+    ),
+
+    window: (
+        'bar': $brand-light,
+        'button-close': $osx-red,
+        'button-minimize': $osx-yellow,
+        'button-maximize': $osx-green,
+    )
+);

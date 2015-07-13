@@ -1,0 +1,80 @@
+// ---------------------------------------------------------------------
+// FileManager
+// ---------------------------------------------------------------------
+// Mimics the Finder application found in OSX, showing a directory
+// structure of files and folders.
+
+// .FileManager
+@include component( 'FileManager' )
+{
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    font-size: 14px;
+    cursor: default;
+    user-select: none;
+
+    // .FileManager-group
+    @include element( 'group' )
+    {
+        transition: height 0.5s;
+
+        @include element( 'item' )
+        {
+            padding-left: 64px;
+        }
+
+        @include modifier( 'open' )
+        {
+            height: 0;
+        }
+    }
+
+    // .FileManager-item
+    @include element( 'item' )
+    {
+        line-height: 32px;
+        padding-left: 32px;
+        position: relative;
+
+        // .FileManager-item:nth-child( odd )
+        &:nth-child( odd )
+        {
+            background-color: #fafafa;
+        }
+
+        // .Filemanager-item--file
+        @include modifier( 'file' )
+        {
+
+        }
+
+        // .FileManager-item--folder
+        @include modifier( 'folder' )
+        {
+            font-weight: 400;
+            cursor: pointer;
+
+            // .FileManager-item--folder:before
+            &:before {
+                position: absolute;
+                left: 10px;
+                content: '►';
+                font-size: 10px;
+                color: #aaa;
+            }
+
+            // .FileManager-item--folder.is-open
+            @include stance( 'open' )
+            {
+                &:before {
+                    content: '▼';
+                }
+            }
+        }
+
+        @include modifier( 'depth' )
+        {
+            padding-left: 64px;
+        }
+    }
+}

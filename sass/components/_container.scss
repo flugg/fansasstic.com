@@ -1,7 +1,35 @@
+// ---------------------------------------------------------------------
 // Container
-@include Component( 'Container' )
-{
-    max-width: 960px;
+// ---------------------------------------------------------------------
+// Page container, forcing a maximum width and centering the page.
 
-    @include module( 'center' );
+// .Container
+@include component( 'Container' )
+{
+    padding-right: get( $layout, 'spacing.base' ) * 2;
+    padding-left: get( $layout, 'spacing.base' ) * 2;
+    max-width: get( $layout, 'width.page' );
+    @include modules( 'center', 'clear-fix' );
+
+    @include modifier( 'big' )
+    {
+        max-width: get( $layout, 'width.page-extended' );
+
+        @include element( 'article' )
+        {
+            padding-right: get( $layout, 'spacing.base' ) * 2;
+            padding-left: get( $layout, 'spacing.base' ) * 4;
+            float: right;
+            min-height: 1px;
+            width: get( $layout, 'width.page' );
+        }
+
+        @include element( 'sidebar' )
+        {
+            float: left;
+            min-height: 1px;
+            width: get( $layout, 'width.page-extended' ) - get( $layout, 'width.page' ) - get( $layout, 'spacing.base' ) * 4;
+            border-right: get( $layout, 'border.separator' ) get( $color, 'border.separator' );
+        }
+    }
 }

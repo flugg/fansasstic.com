@@ -1,7 +1,41 @@
+// ---------------------------------------------------------------------
 // Footer
-@include Component( 'Footer' )
+// ---------------------------------------------------------------------
+// Main footer banner at the bottom of the page, consisting of quick
+// information about the site and some copyright stuff.
+
+// .Footer
+@include component( 'Footer' )
 {
-    height: 180px;
-    background: url( '../images/footer-bg.png' ) 50% 0;
-    margin-top: 50px;
+    height: ( get( $layout, 'height.banner' ) / 2 );
+    background: image( 'footer-bg.png' ) center top;
+    color: get( $color, 'font.weak' );
+
+    @include element( 'section' )
+    {
+        float: left;
+        width: ( 100% / 3 );
+
+        @include modifier( 'inverted' )
+        {
+            text-align: right;
+        }
+    }
+
+    @include element( 'list' )
+    {
+        list-style: none;
+        padding: get( $layout, 'spacing.base' ) * 4 0;
+        margin: 0;
+    }
+
+    @include element( 'link' )
+    {
+        color: get( $color, 'font.light' );
+
+        &:hover
+        {
+            border-bottom: get( $layout, 'border.action' ) get( $color, 'border.action-dark' );
+        }
+    }
 }

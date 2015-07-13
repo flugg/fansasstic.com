@@ -1,4 +1,4 @@
-var app = angular.module( 'fansasstic', [ 'hljs', 'ng-slide-down' ] );
+var app = angular.module( 'fansasstic', [ 'hljs', 'ng-slide-down', 'sticky' ] );
 
 app.controller( 'MainController', [ '$scope', function ( $scope ) {
 
@@ -8,12 +8,16 @@ app.controller( 'MainController', [ '$scope', function ( $scope ) {
     $scope.folderVariables = true;
 
     $scope.goHome = function() {
-        $scope.currentPage = 'app/getting-started.html';
+        $scope.hasSideBar = false;
+        $scope.active = 'home';
+        $scope.activePage = 'app/getting-started.html';
         $scope.title = 'Getting started';
     };
 
     $scope.goToDocs = function() {
-        $scope.currentPage = 'app/documentation.html';
+        $scope.hasSideBar = true;
+        $scope.active = 'documentation';
+        $scope.activePage = 'app/documentation.html';
         $scope.title = 'Documentation';
     }
 

@@ -1,0 +1,63 @@
+html {
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1 {
+    margin: 0;
+}
+
+a {
+    background-color: transparent;
+
+    &:active,
+    &:hover {
+        outline: 0;
+    }
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+img {
+    border: 0;
+}
+
+pre {
+}
+
+code,
+pre {
+    overflow: auto;
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+hr {
+    border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}

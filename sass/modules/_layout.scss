@@ -4,19 +4,6 @@
     margin-left: auto;
 }
 
-@include new-module( 'center' )
-{
-
-}
-
-@include new-module( 'center-vertical' )
-{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY( -50% );
-}
-
 @include new-module( 'hide' )
 {
     display: none;

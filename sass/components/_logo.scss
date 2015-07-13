@@ -1,17 +1,25 @@
+// ---------------------------------------------------------------------
 // Logo
-@include Component( 'Logo' )
+// ---------------------------------------------------------------------
+// A component representing the logo of the site. This is just a wrapper
+// and requires an img tag to see the actual logo.
+
+// .Logo
+@include component( 'Logo' )
 {
     position: relative;
-    width: 390px;
-    top: 180px - ( 120px / 3 );
-    transform: translateY( -50% );
-
     @include modules( 'center' );
 
-    @include Modifier( 'footer' )
+    @include modifier( 'header' )
     {
-        top: ( ( 180px - 50px ) / 2 );
+        width: 390px;
+        top: 180px - ( 120px / 3 );
+        transform: translateY( -50% );
+    }
+
+    @include modifier( 'footer' )
+    {
+        top: ( ( get( $layout, 'height.banner' ) / 4 ) - ( 50px / 2 ) ); // 50px is the logo height
         width: 30px;
-        transform: none;
     }
 }

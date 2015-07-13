@@ -1,0 +1,20 @@
+// ---------------------------------------------------------------------
+// TitleBar
+// ---------------------------------------------------------------------
+// The bar sitting below the navigation bar showing the main title of
+// the active page.
+
+// .TitleBar
+@include component( 'TitleBar' )
+{
+    border-bottom: get( $layout, 'border.separator' ) get( $color, 'border.separator' );
+
+    // .TitleBar-heading
+    @include element( 'heading' )
+    {
+        margin: 0;
+        line-height: get( $layout, 'height.bar' );
+        font-size: get( $typography, 'font-size.title' );
+        font-weight: get( $typography, 'font-weight.title' );
+    }
+}

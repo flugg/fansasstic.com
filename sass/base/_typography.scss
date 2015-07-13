@@ -1,0 +1,43 @@
+::selection {
+    color: white;
+}
+
+body {
+    line-height: get( $typography, 'line-height.base' );
+    font-family: get( $typography, 'font-family.base' );
+    font-size: get( $typography, 'font-size.base' );
+    font-weight: get( $typography, 'font-weight.base' );
+}
+
+a {
+    color: get( $color, 'font.action' );
+    font-weight: get( $typography, 'font-weight.action' );
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: get( $layout, 'border.action' ) get( $color, 'font.action' );
+    }
+}
+
+strong {
+    font-weight: get( $typography, 'font-weight.strong' );
+}
+
+h3 {
+    font-size: get( $typography, 'font-size.title' );
+    font-weight: get( $typography, 'font-weight.heading' );
+}
+
+h4 {
+    font-size: get( $typography, 'font-size.heading' );
+    font-weight: get( $typography, 'font-weight.heading' );
+}
+
+code {
+    font-family: get( $typography, 'font-family.terminal' );
+    font-size: get( $typography, 'font-size.small' );
+}
+
+aside {
+    font-size: get( $typography, 'font-size.small' );
+}

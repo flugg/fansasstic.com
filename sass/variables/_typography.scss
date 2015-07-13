@@ -1,0 +1,35 @@
+// ---------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------
+//
+
+$typography: (
+
+    line-height: (
+        'base': 1.8
+    ),
+
+    font-weight: (
+        'base': 200,
+        'title': 200,
+        'action': 400,
+        'strong': 400,
+        'heading': 600,
+    ),
+
+    font-size: (
+        'small': 14px,
+        'base': 16px,
+        'heading': 18px,
+        'title': 24px
+    ),
+
+    font-family: (
+        'base': 'Open Sans',
+        'terminal': 'Source Code Pro'
+    ),
+
+    letter-spacing: (
+        'navigation': 3px
+    )
+);

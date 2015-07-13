@@ -1,102 +1,178 @@
 <!doctype html>
+
 <html class = 'no-js' lang = 'en' ng-app = 'fansasstic'>
+
     <head>
-        <meta charset = 'utf-8'>
+
+        <!-- Character Set -->
+        <meta charset = "utf-8">
+
+        <!--
+         ______                                   _    _
+        |  ____|                                 | |  (_)
+        | |__  __ _  _ __   ___   __ _  ___  ___ | |_  _   ___
+        |  __|/ _` || '_ \ / __| / _` |/ __|/ __|| __|| | / __|
+        | |  | (_| || | | |\__ \| (_| |\__ \\__ \| |_ | || (__
+        |_|   \__,_||_| |_||___/ \__,_||___/|___/ \__||_| \___|
+        -->
+
+        <!-- Site Title -->
+        <title>Fansasstic</title>
+
+        <!-- Force Edge Version of IE -->
         <meta http-equiv = 'x-ua-compatible' content = 'ie=edge'>
-        <title></title>
-        <meta name = 'description' content = ''>
-        <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
 
-        <link rel = 'apple-touch-icon' href = 'apple-touch-icon.png'>
-        <!-- Place favicon.ico in the root directory -->
+        <!-- Search Engine Optimization -->
+        <meta name = "author"      content = "Mango Pixel">
+        <meta name = "description" content = "">
+        <meta name = "keywords"    content = "">
 
+        <!-- Disable Zoom on Mobile -->
+        <meta name = 'viewport' content = 'initial-scale = 1, maximum-scale = 1, user-scalable = 0'>
+
+        <!-- Stylesheets -->
         <link rel = 'stylesheet' href = 'assets/css/main.css'>
         <link rel = 'stylesheet' href = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css'>
         <link rel = 'stylesheet' href = 'http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500'>
+
     </head>
-    <body ng-controller = 'MainController'>
-        <!--[if lt IE 8]>
-        <p class = 'browserupgrade'>You are using an <strong>outdated</strong> browser. Please
-            <a href = 'http://browsehappy.com/'>upgrade your browser</a> to improve your experience.
-        </p>
-        <![endif]-->
 
-        <header class = 'Banner'>
+    <body ng-controller = 'MainController' class = 'Application'>
 
-            <h1 class = 'Logo'>
-                <a href = '' ng-click = 'goHome()'>
-                    <img src = 'assets/images/logo.png' alt = 'Fansasstic' />
-                </a>
-            </h1>
+        <!-- Header -->
+        <header class = 'Header'>
+            <div class = 'Header-banner'>
 
-            <div class = 'Banner-showcase'>
+                <!-- Logo -->
+                <h1 class = 'Logo Logo--header'>
+                    <a href = '' ng-click = 'goHome()'>
+                        <img src = 'assets/images/fansasstic-logo.png' alt = 'Fansasstic Sass Framework' />
+                    </a>
+                </h1>
+                <!-- /Logo -->
 
-                <div class = 'Window'>
+                <div class = 'Header-showcase'>
 
-                    <header class = 'Window-bar'>
-                        <div class = 'Window-button Window-button--close'></div>
-                        <div class = 'Window-button Window-button--minimize'></div>
-                        <div class = 'Window-button Window-button--maximize'></div>
-                    </header>
+                    <!-- Window -->
+                    <div class = 'Window Window--small'>
+                        <header class = 'Window-bar'>
+                            <div class = 'Window-button Window-button--close'></div>
+                            <div class = 'Window-button Window-button--minimize'></div>
+                            <div class = 'Window-button Window-button--maximize'></div>
+                        </header>
 
-                    <div class = 'Console'>
-                        <div class = 'Console-command'>npm install -g fansasstic-cli</div>
-                        <div class = 'Console-command'>fansasstic new</div>
+                        <!-- Terminal -->
+                        <div class = 'Terminal'>
+                            <div class = 'Terminal-command'>npm install -g fansasstic-cli</div>
+                            <div class = 'Terminal-command'>fansasstic new</div>
+                        </div>
+                        <!-- /Terminal -->
+
                     </div>
+                    <!-- /Window -->
 
                 </div>
-
             </div>
+
+            <!-- Navigation -->
+            <nav class = 'NavigationBar' sticky sticky-class = 'is-sticky' body-class = 'is-sticky'>
+                <ul class = 'NavigationBar-list'>
+                    <li class = 'NavigationBar-item'>
+                        <a href = '#' class = 'NavigationBar-link' ng-click = 'goHome()' ng-class = "{ 'is-active': active == 'home' }">Home</a>
+                    </li>
+                    <li class = 'NavigationBar-item'>
+                        <a href = '#' class = 'NavigationBar-link' ng-click = 'goToDocs()' ng-class = "{ 'is-active': active == 'documentation' }">Docs</a>
+                    </li>
+                    <li class = 'NavigationBar-item'>
+                        <a href = '#' class = 'NavigationBar-link' ng-class = "{ 'is-active': active == 'api' }">API</a>
+                    </li>
+                    <li class = 'NavigationBar-item'>
+                        <a href = 'http://github.com/flugger/fansasstic' class = 'NavigationBar-link'>Github</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /NavigationBar -->
 
         </header>
+        <!-- /Header -->
 
-        <main>
+        <main class = 'Application-content'>
 
-            <header class = 'StickyBar'>
+            <!-- TitleBar -->
+            <div class = 'TitleBar'>
 
-                <nav class = 'Navigation'>
-                    <ul class = 'Navigation-list'>
-                        <li class = 'Navigation-item'>
-                            <a href = '#' class = 'Navigation-link' ng-click = 'goToDocs()'>Documentation</a>
-                        </li>
-                        <li class = 'Navigation-item'>
-                            <a href = '#' class = 'Navigation-link'>API</a>
-                        </li>
-                        <li class = 'Navigation-item'>
-                            <a href = '#' class = 'Navigation-link'>Github</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div class = 'StickyBar-header'>
-                    <div class = 'Container'>
-                        <h2 class = 'StickyBar-heading'>{{ title }}</h2>
-                    </div>
+                <!-- Container -->
+                <div class = 'Container' ng-class = "{ 'Container--big': hasSideBar }">
+                    <h2 class = 'TitleBar-heading'>{{ title }}</h2>
                 </div>
+                <!-- /Container-->
 
-            </header>
-
-            <div class = 'Container'>
-                <ng-include src = 'currentPage'></ng-include>
             </div>
+            <!-- /TitleBar -->
+
+            <ng-include src = 'activePage'></ng-include>
 
         </main>
 
+        <!-- Footer -->
         <footer class = 'Footer'>
 
-            <h1 class = 'Logo Logo--footer'>
-                <a href = '' ng-click = 'goHome()'>
-                    <img src = 'assets/images/fansasstic-icon.png' alt = 'Fansasstic' />
-                </a>
-            </h1>
+            <!-- Container -->
+            <div class = 'Container' ng-class = "{ 'Container--big': hasSideBar }">
+
+                <div class = 'Footer-section'>
+                    <ul class = 'Footer-list'>
+                        <li>
+                            <strong>Community</strong>
+                        </li>
+                        <li>
+                            <a href = "" class = 'Footer-link'>Github</a>
+                        </li>
+                        <li>
+                            <a href = "" class = 'Footer-link'>Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = 'Footer-section'>
+
+                    <!-- Logo -->
+                    <div class = "Logo Logo--footer">
+                        <a href = '' ng-click = 'goHome()' class = 'Footer-link'>
+                            <img src = 'assets/images/fansasstic-icon.png' alt = 'Go home' />
+                        </a>
+                    </div>
+                    <!-- /Logo -->
+
+                </div>
+
+                <div class = 'Footer-section Footer-section--inverted'>
+                    <ul class = 'Footer-list'>
+                        <li>
+                            <strong>Created by</strong>
+                        </li>
+                        <li>
+                            <a href = 'https://twitter.com/alextommeras' class = 'Footer-link'>Alexander Tømmerås</a>
+                        </li>
+                        <li>
+                            <strong>© Fansasstic 2015</strong>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- /Container -->
 
         </footer>
+        <!-- /Footer -->
 
-        <script src = 'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js'></script>
+        <!-- JavaScript -->
         <script src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+        <script src = 'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js'></script>
         <script>window.jQuery || document.write( "<script src='js/vendor/jquery-1.11.2.min.js'><\/script>" )</script>
         <script src = 'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js'></script>
         <script src = 'http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js'></script>
+        <script src = 'bower_components/ngSticky/lib/sticky.js'></script>
         <script src = 'bower_components/ng-slide-down/dist/ng-slide-down.min.js'></script>
         <script src = 'app/app.js'></script>
     </body>
